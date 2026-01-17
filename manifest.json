@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Smart Auto Fill",
+  "name": "autofill.ai",
   "version": "1.0",
   "description": "Smart autofill using labels & placeholders",
   "permissions": ["activeTab", "scripting"],
