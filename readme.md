@@ -1,7 +1,7 @@
-<h1 align="center">AutoFill.ai <span  style="color:red; font-size:15px;">v1.0</span></h1>
+<h1 align="center">AutoFill.ai</h1>
 
 <p align="center">
-  <img src="" alt="AutoFill.ai" />
+  <img src="./assests/banner.jpeg" alt="AutoFill.ai" />
 </p>
 
 <p align="center">
