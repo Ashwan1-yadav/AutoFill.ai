@@ -1,7 +1,7 @@
 <h1 align="center">AutoFill.ai</h1>
 
 <p align="center">
-  <img src="./assests/banner.jpeg" alt="AutoFill.ai" />
+  <img src="./Extension-client/assests/banner.jpeg" alt="AutoFill.ai" />
 </p>
 
 <p align="center">
