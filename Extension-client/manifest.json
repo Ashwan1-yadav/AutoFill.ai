@@ -2,16 +2,17 @@
   "manifest_version": 3,
   "name": "AutoFill.ai",
   "version": "1.0",
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "storage", "scripting", "tabs"],
   "host_permissions": ["http://localhost:3000/*"],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js",
+    "type": "module"
   },
+  "action": {},
   "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
-  "action": {}
+  {
+    "matches": ["<all_urls>"],
+    "js": ["content.js"]
+  }
+  ]
 }

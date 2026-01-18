@@ -50,7 +50,11 @@ export const mapForm = async (req, res) => {
       mappedFields,
       rawOcr: ocrText
     });
-
+    console.log("OCR + LLM mapped data : ", {
+      success: true,
+      mappedFields,
+      rawOcr: ocrText
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });
