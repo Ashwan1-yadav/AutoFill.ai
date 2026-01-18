@@ -1,20 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="popup.css" />
+  <title>AutoFill.ai</title>
 </head>
 <body>
-  <div class="card">
-    <h2>AutoForm AI</h2>
+  <h3>Upload Document for Auto-Fill</h3>
+  <input type="file" id="fileInput" />
+  <button id="processBtn">Process</button>
 
-    <input type="file" id="file" />
-    <button id="scan">Scan & Fill</button>
-
-    <p id="status"></p>
-  </div>
-
-  <script type="module" src="popup.js"></script>
-
-
+  <script src="libs/tesseract/tesseract.min.js"></script>
+  <script src="popup.js"></script>
 </body>
 </html>

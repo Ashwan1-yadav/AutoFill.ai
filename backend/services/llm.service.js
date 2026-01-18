@@ -4,6 +4,7 @@ import { buildPrompt } from "./prompt.service.js";
 
 const genAI = new GoogleGenerativeAI(ENV.GEMINI_API_KEY);
 
+
 export async function mapFormUsingGemini({ ocrText, fields }) {
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash"

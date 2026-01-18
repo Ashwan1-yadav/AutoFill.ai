@@ -5,4 +5,8 @@ const router = express.Router();
 
 router.post("/", mapForm);
 
+router.get("/", (_, res) => {
+  res.send("Map route working");
+});
+
 export default router;

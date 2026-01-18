@@ -1,19 +1,20 @@
-import { extractText } from "./ocr.js";
+const fileInput = document.getElementById("fileInput");
+const processBtn = document.getElementById("processBtn");
 
-const status = document.getElementById("status");
+processBtn.addEventListener("click", async () => {
+  const file = fileInput.files[0];
+  if (!file) return alert("Please select a file.");
 
-document.getElementById("scan").onclick = async () => {
-  const file = document.getElementById("file").files[0];
-  if (!file) return;
+  const imgURL = URL.createObjectURL(file);
 
-  status.innerText = "Scanning document...";
+  const result = await Tesseract.recognize(imgURL, 'eng');
 
-  const text = await extractText(file);
+  const text = result.data.text;
 
-  chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
-    chrome.tabs.sendMessage(tabs[0].id, {
-      action: "LLM_AUTOFILL",
-      ocrText: text
-    });
+  chrome.runtime.sendMessage({
+    action: "LLM_AUTOFILL",
+    ocrText: text
   });
-};
+
+  alert("Text processed and sent to the page!");
+});
