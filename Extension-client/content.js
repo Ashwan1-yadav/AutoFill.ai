@@ -1,15 +1,12 @@
-chrome.runtime.onMessage.addListener((msg) => {
-  if (msg.action === "APPLY_MAPPING") {
-    const data = msg.data;
+chrome.runtime.onMessage.addListener(msg => {
+  if (msg.action === "LLM_AUTOFILL") {
+    const fields = msg.mappedFields;
 
-    for (const [key, value] of Object.entries(data)) {
-      const input =
-        document.querySelector(`input[name="${key}"]`) ||
-        document.querySelector(`input[id="${key}"]`);
-
-      if (input) {
-        input.value = value;
-      }
-    }
+    Object.entries(fields).forEach(([key, value]) => {
+      const input = document.querySelector(
+        `input[name*="${key}" i], input[id*="${key}" i], textarea[name*="${key}" i]`
+      );
+      if (input && !input.value) input.value = value;
+    });
   }
 });

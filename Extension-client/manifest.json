@@ -2,36 +2,16 @@
   "manifest_version": 3,
   "name": "AutoFill.ai",
   "version": "1.0",
-  "description": "OCR documents and auto-fill web forms using AI",
-
-  "permissions": ["activeTab", "tabs", "storage"],
-  "host_permissions": ["<all_urls>"],
-
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://localhost:3000/*"],
   "background": {
     "service_worker": "background.js"
   },
-
-  "action": {},
-
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
   ],
-
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "libs/tesseract/*",
-        "libs/tesseract/lang/*"
-      ],
-      "matches": ["<all_urls>"]
-    }
-  ],
-
-  "content_security_policy": {
-  "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; object-src 'self'"
-}
-
+  "action": {}
 }
