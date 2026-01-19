@@ -1,5 +1,6 @@
 chrome.action.onClicked.addListener((tab) => {
   chrome.storage.local.set({ targetTabId: tab.id }, () => {
+    console.log("Set targetTabId to", tab.id);
     chrome.tabs.create({ url: chrome.runtime.getURL("upload.html") });
   });
 });
@@ -8,6 +9,7 @@ chrome.runtime.onMessage.addListener((msg) => {
   if (msg.action === "LLM_AUTOFILL") {
     chrome.storage.local.get("targetTabId", ({ targetTabId }) => {
       if (!targetTabId) return console.error("targetTabId not set");
+      console.log("Sending mapped fields to tab:", targetTabId);
 
       chrome.scripting.executeScript({
         target: { tabId: targetTabId },

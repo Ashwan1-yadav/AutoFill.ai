@@ -28,14 +28,14 @@ export const mapForm = async (req, res) => {
 `;
 
     const geminiRes = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${ ENV.GEMINI_API_KEY }`,
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${ENV.GEMINI_API_KEY}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          contents: [{ parts: [{ text: prompt }] }]
-        })
-      }
+          contents: [{ parts: [{ text: prompt }] }],
+        }),
+      },
     );
 
     const geminiData = await geminiRes.json();
@@ -48,15 +48,15 @@ export const mapForm = async (req, res) => {
     res.json({
       success: true,
       mappedFields,
-      rawOcr: ocrText
+      rawOcr: ocrText,
     });
     console.log("OCR + LLM mapped data : ", {
       success: true,
       mappedFields,
-      rawOcr: ocrText
+      rawOcr: ocrText,
     });
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: err.message });
   }
-}
+};
