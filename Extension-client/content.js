@@ -1,4 +1,3 @@
-// content.js
 chrome.runtime.sendMessage({ action: "READY_FOR_AUTOFILL" });
 
 chrome.runtime.onMessage.addListener(msg => {
