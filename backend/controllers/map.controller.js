@@ -27,12 +27,6 @@ export const mapForm = async (req, res) => {
 }
 `;
 
-    // const res = await fetch(
-    //   `https://generativelanguage.googleapis.com/v1beta/models?key=${ENV.GEMINI_API_KEY}`,
-    // );
-    // const d = await res.json();
-    // console.log(d);
-
     const geminiRes = await fetch(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${ENV.GEMINI_API_KEY}`,
       {
@@ -45,7 +39,6 @@ export const mapForm = async (req, res) => {
     );
 
     const geminiData = await geminiRes.json();
-    console.log("Gemini response:", geminiData);
     const rawText =
       geminiData.candidates?.[0]?.content?.parts?.[0]?.text || "{}";
 

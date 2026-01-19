@@ -14,6 +14,7 @@ uploadBtn.addEventListener("click", async () => {
   });
 
   const data = await res.json();
+  console.log("OCR + AI mapping result:", data);
 
   chrome.runtime.sendMessage({
     action: "LLM_AUTOFILL",
