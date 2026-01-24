@@ -24,7 +24,7 @@ const Header = () => {
       <span>🏠</span> Home
     </Link>
     <Link to="/Documentation" className="flex items-center gap-1.5 hover:text-white transition-colors">
-      <span>📚</span> Services
+      <span>📚</span> Services we offer
     </Link>
     <Link to="/Support" className="flex items-center gap-1.5 hover:text-white transition-colors">
       <span>❓</span> Support
