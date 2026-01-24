@@ -9,6 +9,7 @@ import Support from './pages/Support';
 
 
 
+
 const App = () => {
   return (
      <>
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/Documentation' element={<Documentation />}/>
         <Route path='/Support' element={<Support />}/>
         <Route path='/Changelog' element={<Changelog />}/>
+        
         
         
         
