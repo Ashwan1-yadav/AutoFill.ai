@@ -551,7 +551,7 @@ For issues, questions, or suggestions:
 
 **Made with ❤️ for simplifying form filling**
 
-![Extension Icon](./icon.png)
+![Extension Icon](./Extension-client/assests/banner.jpeg)
 
 **Version 1.0** | **AutoFill.ai**
 
